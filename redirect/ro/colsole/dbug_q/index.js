@@ -24,7 +24,7 @@ function getUrlQueries() {
       const debug_ws_port = queries["debug_ws_port"];
       const debug_asap_start_airplay = queries["debug_asap_start_airplay"];
 
-      var redirectUrl = "url=jp-com-intercom-ro-console-url-1911://hostname:8080/test";
+      var redirectUrl = "jp-com-intercom-ro-console-url-1911://hostname:8080/test";
       redirectUrl += new URLSearchParams(queries);
       console.log(redirectUrl);
       window.location.href = redirectUrl;
