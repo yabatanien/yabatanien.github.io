@@ -20,9 +20,9 @@ function getUrlQueries() {
   const onLoad = async () => {
       const queries = getUrlQueries();
       console.log(queries);
-      const debug_ws_host = queries[debug_ws_host];
-      const debug_ws_port = queries[debug_ws_port];
-      const debug_asap_start_airplay = queries[debug_asap_start_airplay];
+      const debug_ws_host = queries["debug_ws_host"];
+      const debug_ws_port = queries["debug_ws_port"];
+      const debug_asap_start_airplay = queries["debug_asap_start_airplay"];
 
       var redirectUrl = "url=jp-com-intercom-ro-console-url-1911://hostname:8080/test";
       redirectUrl += new URLSearchParams(queries);
