@@ -1,6 +1,5 @@
 function getUrlQueries() {
   var queryStr = window.location.search.slice(1);  // 文頭?を除外
-  console.log(queryStr);
   queries = {};
 
   // クエリがない場合は空のオブジェクトを返す
@@ -20,20 +19,18 @@ function getUrlQueries() {
 
 const jumpToUrl = async () => {
   const queries = getUrlQueries();
-  console.log(queries);
   const debug_ws_host = queries["debug_ws_host"];
   const debug_ws_port = queries["debug_ws_port"];
   const debug_asap_start_airplay = queries["debug_asap_start_airplay"];
 
   var redirectUrl = "jp-com-intercom-ro-console-url-1911://hostname:8080/test/";
-  redirectUrl += new URLSearchParams(queries);
+  redirectUrl += "?" + new URLSearchParams(queries);
 
-  console.log(redirectUrl);
   window.location.href = redirectUrl;
 }
 
 const onLoad = async () => {
-  setTimeout(jumpToUrl, 5000);
+  setTimeout(jumpToUrl, 2000);
 }
 
 window.onload = onLoad;
